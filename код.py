@@ -6,6 +6,7 @@ win = pygame.display.set_mode((1000,700))
 # заголовок
 pygame.display.set_caption("Игра на питоне")
 
+# добавление спрайтов
 walk_right = [pygame.image.load('Sprites/pygame_right_1.png'),
 pygame.image.load('Sprites/pygame_right_2.png'),pygame.image.load('Sprites/pygame_right_3.png'),
 pygame.image.load('Sprites/pygame_right_4.png'),pygame.image.load('Sprites/pygame_right_5.png'),
@@ -33,11 +34,18 @@ class snaryad():
 clock = pygame.time.Clock()
 
 def lowSpeed():
+    """
+    def lowspeed() позволяет персонажу снизить скорость,
+        если он движется бустрее его изначальной скорости
+    """
     global speed
     if speed > 5:
         speed -= 5
 
 def drawWindow():
+    """
+    def drawWindow() заполняет экран черным цветом и меняет спрайт в зависимости от переменной aimCount    
+    """
     global aimCount
      # после каждого перемещения нужно заполнять поле черным цветом
     win.fill((0,0,0))
@@ -55,7 +63,6 @@ def drawWindow():
     for bullet in bullets:
         bullet.draw(win)
 
-    #pygame.draw.rect(win,(0,0,255),(x,y,width,height))
     pygame.display.update()
 
 #параметры
