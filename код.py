@@ -26,11 +26,13 @@ pygame.image.load('Sprites/pygame_left_6.png')]
 play_stand = pygame.image.load('Sprites/pygame_idle.png')
 
 def texting():
+    ''' Функция для проявления надписей'''
     win.blit(text,textscopes)
     win.blit(text2,(40,30))
     win.blit(text3,(40,50))
 
 class snaryad():
+    '''Класс, описывающий снаряд'''
     def __init__(self,x,y,r,colour,direction):
         self.x = x
         self.y = y
