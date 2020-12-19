@@ -6,6 +6,12 @@ win = pygame.display.set_mode((1000,700))
 # заголовок
 pygame.display.set_caption("Игра на питоне")
 
+font = pygame.font.Font(None,20)
+text = font.render('Hello! This is my first game! Here are some feachers:', True, [255,255,255])
+textscopes = (40,10)
+text2 = font.render('You are able to move with these bottoms ( <-  ^  -> )', True, [255,255,255])
+text3 = font.render('Also it is possible to run with (SHIFT) and shoot with bottom (F)', True, [255,255,255])
+
 # добавление спрайтов
 walk_right = [pygame.image.load('Sprites/pygame_right_1.png'),
 pygame.image.load('Sprites/pygame_right_2.png'),pygame.image.load('Sprites/pygame_right_3.png'),
@@ -18,6 +24,11 @@ pygame.image.load('Sprites/pygame_left_4.png'),pygame.image.load('Sprites/pygame
 pygame.image.load('Sprites/pygame_left_6.png')]
 
 play_stand = pygame.image.load('Sprites/pygame_idle.png')
+
+def texting():
+    win.blit(text,textscopes)
+    win.blit(text2,(40,30))
+    win.blit(text3,(40,50))
 
 class snaryad():
     def __init__(self,x,y,r,colour,direction):
@@ -62,7 +73,8 @@ def drawWindow():
         win.blit(play_stand, (x, y))
     for bullet in bullets:
         bullet.draw(win)
-
+    texting()
+    
     pygame.display.update()
 
 #параметры
